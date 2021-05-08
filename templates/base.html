@@ -1,0 +1,50 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Craig's Catalog</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<nav class="indigo">
+    <div class="container nav-wrapper">
+        <a href="/" class="brand-logo">Craig's Catalog</a>
+        <ul id="nav-mobile" class="right">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h4 style="text-align: center">A Craigslist Web Scraper</h4>
+
+        <div class="col s4">
+            <div class="center">
+                <i class="large material-icons" style="color: #3d5afe">location_searching</i>
+                <p>Fast craigslist web scraper & image classifier</p>
+                <p class="light center">Filter your searches and hit classify to begin image classification</p>
+            </div>
+        </div>
+
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input id="icon prefix"type="text" name="search" placeholder="Search Craigslist Listings...">
+        <button class="btn waves-effect waves-light indigo darken-3" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+
+    {% block content %}
+
+    {% endblock content %}
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
