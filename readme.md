@@ -1,10 +1,10 @@
 # Craig's Catalog
 
 ## Description 
-A Craigslist clone that allows you to search through posts based in New York via web scraping. 
+A python-based Craigslist clone that allows you to search through posts throughout New York via web scraping. 
 
 
-## Technologies & Libraries
+## External Technologies & Libraries
 
 Frameworks: 
 - Django
